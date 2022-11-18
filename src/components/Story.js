@@ -1,15 +1,9 @@
-export default function Story() {
+export default function Story(props) {
     return (
-        <div class="story">
-            <div class="imagem">
-                <img src="public/assets/catanacomics.svg" alt="" />
+            <div class="story">
+                <img src={props.avatar} alt="" class="perfil-img" />
+                <img src="assets/story-circle.svg" alt="" />
+                <p>{props.name}</p>
             </div>
-            <div class="usuario">
-                <div class="texto">
-                    <strong>catanacomics</strong>
-                    Catanacomics
-                </div>
-            </div>
-        </div>
     )
 }
