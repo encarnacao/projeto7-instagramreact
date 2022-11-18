@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ion-icon{
+    cursor: pointer;
+}
+
+.barra-topo{
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    height: 54px;
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.container-topo{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 935px;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;
+    font-size: 22px;
+}
+
+.logo img{ 
+    margin-top: 5px;
+
+}
+
+.logo div{
+    border-left: 1px solid #DBDBDB;
+    height: 22px;
+}
+
+
+.pesquisa img{
+    display: none;
+}
+
+
+#barra-busca{
+    border: 1px solid #DBDBDB;
+    width: 215px;
+    height: 28px;
+    background-color: #FAFAFA;
+}
+
+
+#barra-busca::placeholder{
+    text-align: center;
+}
+
+.botoes{
+    font-size: 22px;
+}
+.botoes .ion-icon{
+    margin-left: 20px;
+}
+.non-mobile{
+    display: inline;
+}
+
+.container{
+    width: 935px;
+    height: 100%;
+    margin: 88px auto 0 auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.container-feed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stories{
+    display: flex;
+    position: relative;
+    height: 118px;
+    width: 614px;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    align-items: center;
+    padding-left: 7px;
+    overflow: hidden;
+}
+
+.stories .ion-icon{
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    filter: drop-shadow(-1px -1px 0.1em black);
+    right: 0;
+    top: 35%;
+}
+
+.story{
+    cursor: pointer;
+    margin-left: 12px;
+    display: flex;
+    min-height: 85px;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.story img{
+    width: 66px;
+}
+
+.perfil-img{
+    border-radius: 50%;
+}
+
+.story .perfil-img{
+    position: absolute;
+    width: 56px;
+    top: 5px;
+}
+
+.story p{
+    font-size: 12px;
+    margin-top: 5px;
+    max-width: 66px;
+    min-height: 15px;
+    color: #262626;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.container-posts{
+    margin-top: 24px;
+    height: 100%;
+    width: 614px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.post{
+    width: 614px;
+    margin: 0px 0px 60px 0px;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.topo{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px 0px 5px;
+}
+
+.profile{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+}
+
+.perfil img{
+    width: 32px;
+}
+
+.post a{
+    color: #262626;
+    font-weight: 500;
+}
+
+.perfil a, .post p{
+    margin-left: 10px;
+}
+
+.reticencias{
+    font-size:20px;
+}
+
+
+.imagem img{
+    width: 100%;
+}
+
+.imagem video{
+    width: 100%;
+}
+
+.lcs{
+    font-size: 22px;
+    margin: 10px; /*Revisar*/
+    display: flex;
+    justify-content: space-between;
+}
+.curtidas{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.curtidas img{
+    width: 20px;
+}
+
+.curtidas a{
+    color: black;
+    font-weight: 500;
+}
+
+.legenda{
+    margin: 10px;
+}
+
+.comentarios{
+    margin: 10px; 
+}
+.comentario{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+
+}
+
+.comentario a{
+    color: #00409F;
+}
+
+.cinza{
+    color: #8e8e8e;
+    cursor: pointer;
+}
+
+.tempo{
+    font-size: 10px;
+    color: #8e8e8e;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.comment{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #DBDBDB;
+    padding: 13px;
+}
+
+.comment .esquerda{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+}
+
+.comment svg{
+    cursor: pointer;
+}
+
+#comentario{
+    margin: 0px 10px;
+    width: 100%;
+    border: none;
+    
+}
+
+#comentario:focus{
+    outline:none;
+}
+
+.comment h1{
+    font-weight: 500;
+    color: #B2DFFC;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+.comment h1:hover{
+    color: #0095F6;
+}
+
+.sidebar{
+    width: 293px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    /*Depois de 20 minutos de 
+    sofrimento descobri como usa sticky*/
+    top: 120px;
+}
+
+.sidebar h1{
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.sidebar p{
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+
+.meu-perfil{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.meu-perfil img{
+    width: 56px;
+}
+
+.meu-perfil p{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.nome{
+    margin-left: 20px;
+}
+
+.caixa-sugestoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-sugestao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-sugestao p{
+    font-weight: 500;
+}
+
+.header-sugestao a{
+    font-size: 12px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.sugestao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+.sugestao img{
+    width: 32px;
+    margin-right: 10px;
+}
+
+.sugestao a{
+    font-size: 12px;
+    font-weight: 500;
+    color: #139ef2;
+}
+
+.perfil-sugerido{
+    display: flex;
+    align-items: center;
+}
+
+.nome-e-status{
+    margin: 5px;
+}
+
+
+.grey-text{
+    margin-top: 30px;
+}
+
+.grey-text p{
+    font-size: 11px;
+    color: #c7c7c7;
+}
+
+.barra-inferior{
+    width: 100%;
+    height: 54px;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+    font-size: 22px;
+    position: fixed;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    display: none;
+    bottom: 0px;
+}
+
+@media (max-width:935px){
+    .sidebar{
+        display: none;
+    }
+    .container{
+        justify-content: center;
+        width: 100%;
+        max-width: 935px;
+    }
+}
+
+@media (max-width: 614px){
+    body{
+        background-color: #FAFAFA;
+    }
+
+    .container,
+    .post,
+    .stories,
+    .container-feed{
+        width: 100%;
+    }
+
+    .stories{
+        overflow: auto;
+        overflow-x: hidden;
+        background-color: transparent;
+        border: none;
+    }
+
+    .container{
+        margin: 54px 0;
+    }
+
+    .barra-inferior{
+        display: flex;
+    }
+
+    .stories .ion-icon{
+        display: none;
+    }
+    .logo{
+        width: auto;
+    }
+    .container-posts{
+        margin: 0;
+        width: 100%;
+    }
+    .container-topo{
+        padding: 0px 20px;
+    }
+
+    .botoes .ion-icon{
+        margin-left: 0px;
+    }
+
+    .pesquisa input,
+    .logo div,
+    .logo img,
+    .non-mobile{
+        display: none;
+    }
+
+    .pesquisa img{
+        display: block;
+    }
+    .logo{
+        justify-content: flex-start;
+    }
+}
