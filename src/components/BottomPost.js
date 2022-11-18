@@ -16,14 +16,14 @@ export default function BottomPost(props) {
             </div>
 
             <div className="curtidas">
-                <a href=""><img src={props.info.likeProfileImage} alt="" className="perfil-img" /></a>
-                <p>Curtido por <a>{props.info.likeProfileName}</a> e <a>outras {props.info.numberLikes} pessoas</a></p>
+                <a href="link.html"><img src={props.info.likeProfileImage} alt="" className="perfil-img" /></a>
+                <p>Curtido por <a href="link.html">{props.info.likeProfileName}</a> e <a href="link.html">outras {props.info.numberLikes} pessoas</a></p>
             </div>
             <div className="legenda">
                 <span className="profile">{props.info.profileName}</span> {props.info.description}
             </div>
             <div className="comentarios">
-                <span className="cinza">Ver todos os {props.info.comment.length} comentários</span>
+                <span className="cinza">Ver todos os {props.info.comment.length} comentários</span> {/*Usei comment.length só pra ter numeros diferentes sem ter que passar nova prop*/}
                 {props.info.comment.map((comment, i) => (<Comment name={comment.name} commentText={comment.commentText} key={"comment"+i} />))}
             </div>
             <div className="tempo">
