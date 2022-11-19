@@ -13,14 +13,14 @@ const posts = [
         likeProfileImage: "assets/avatars/gabi.jpg",
         likeProfileName: "gabrielladarze",
         time: "HÁ 10 HORAS",
-        numberLikes: "50",
+        numberLikes: 50,
         comment: [{
             name: "faustao",
             commentText: "oloco bichoooo"
         },
         {
             name: "cencarnacaoq",
-            commentText: <span><a href="perfil.html">@gabrielladarze</a> obrigado!</span> //ACEITA JSX HAHA
+            commentText: <><a href="perfil.html">@gabrielladarze</a> obrigado!</> //ACEITA JSX HAHA
         }
     ]},
     {
@@ -42,7 +42,7 @@ const posts = [
         likeProfileImage: "assets/avatars/9gag.png",
         likeProfileName: "9gag",
         time: "HÁ 10 HORAS",
-        numberLikes: "30",
+        numberLikes: 30,
         comment: [{
             name: "9gag",
             commentText: "cutsy lil bear"
@@ -73,7 +73,7 @@ function Post(props) {
 export default function Posts(props) {
     return (
         <div className="container-posts">
-            {posts.map((post, i) => <Post post={post} number={i} key={"post" + i} />)} {/*Tem key porque warnings me irritam. Não sei pra que serve*/}
+            {posts.map((post) => <Post post={post} key={post.postSrc} />)} {/*Tem key porque warnings me irritam. Não sei pra que serve*/}
         </div>
     )
 }

@@ -2,8 +2,10 @@ import {IoPencil} from 'react-icons/io5';
 import React from 'react';
 
 export default function User() {
+    
     const [name,setName] = React.useState("Caio Encarnação");
     const [avatar,setAvatar] = React.useState("assets/avatars/eu.jpg");
+
     function changeName(){
         const newName = prompt("Digite seu nome:")
         return newName?setName(newName):null;

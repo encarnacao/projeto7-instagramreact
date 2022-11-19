@@ -40,7 +40,7 @@ const profiles = [
 export default function Stories() {
     return (
         <div className="stories">
-            {profiles.map((profile,i) => <Story name={profile.name} avatar={profile.avatar} key={"story"+i}/>)}
+            {profiles.map((profile) => <Story name={profile.name} avatar={profile.avatar} key={profile.name}/>)}
             <IconContext.Provider value={{ className: "ion-icon" }}>
                 <IoChevronForwardCircle />
             </IconContext.Provider>

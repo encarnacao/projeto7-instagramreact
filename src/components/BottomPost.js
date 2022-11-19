@@ -1,30 +1,59 @@
 import Comment from "./Comment"
-import { IoHeartOutline, IoChatbubbleOutline, IoPaperPlaneOutline, IoBookmarkOutline } from "react-icons/io5";
+import { IoHeartOutline, IoHeart, IoChatbubbleOutline, IoPaperPlaneOutline, IoBookmarkOutline, IoBookmark } from "react-icons/io5";
+import React from "react";
 
 
 //Componentizado por questões de legibilidade.
 export default function BottomPost(props) {
+    const [emptyHeart, setEmptyHeart] = React.useState("");
+    const [emptyBookmark, setEmptyBookmark] = React.useState("");
+    const [numberLikes, setNumberLikes] = React.useState(props.info.numberLikes);
+    const [filledHeart, setFilledHeart] = React.useState("hidden");
+    const [filledBookmark, setFilledBookmark] = React.useState("hidden");
+
+    const addLike = () => {
+        setEmptyHeart("hidden");
+        setFilledHeart("filled-heart");
+        setNumberLikes(numberLikes + 1);
+    }
+    const removeLike = () => {
+        setEmptyHeart("");
+        setFilledHeart("hidden");
+        setNumberLikes(numberLikes - 1);
+    }
+    const addBookmark = () => {
+        setEmptyBookmark("hidden");
+        setFilledBookmark("filled-bookmark");
+    }
+    const removeBookmark = () => {
+        setEmptyBookmark("");
+        setFilledBookmark("hidden");
+    }
+
+
     return (
         <div className="baixo">
             <div className="lcs"> {/*Like, Comment, Share*/}
                 <div className="esquerda">
-                    <IoHeartOutline />
+                    <span className={emptyHeart} onClick={addLike}><IoHeartOutline /></span>
+                    <span className={filledHeart} onClick={removeLike}><IoHeart /></span>
                     <IoChatbubbleOutline />
                     <IoPaperPlaneOutline />
                 </div>
-                <IoBookmarkOutline />
+                <span className={emptyBookmark} onClick={addBookmark}><IoBookmarkOutline /></span>
+                <span className={filledBookmark} onClick={removeBookmark}><IoBookmark /></span>
             </div>
 
             <div className="curtidas">
                 <a href="link.html"><img src={props.info.likeProfileImage} alt="" className="perfil-img" /></a>
-                <p>Curtido por <a href="link.html">{props.info.likeProfileName}</a> e <a href="link.html">outras {props.info.numberLikes} pessoas</a></p>
+                <p>Curtido por <a href="link.html">{props.info.likeProfileName}</a> e <a href="link.html">outras {numberLikes} pessoas</a></p>
             </div>
             <div className="legenda">
                 <span className="profile">{props.info.profileName}</span> {props.info.description}
             </div>
             <div className="comentarios">
                 <span className="cinza">Ver todos os {props.info.comment.length} comentários</span> {/*Usei comment.length só pra ter numeros diferentes sem ter que passar nova prop*/}
-                {props.info.comment.map((comment, i) => (<Comment name={comment.name} commentText={comment.commentText} key={"comment"+i} />))}
+                {props.info.comment.map((comment, i) => (<Comment name={comment.name} commentText={comment.commentText} key={i} />))}
             </div>
             <div className="tempo">
                 {props.info.time}

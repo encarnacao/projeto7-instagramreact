@@ -3,8 +3,8 @@ export default function PostSrc(props) {
         return (
             <div className="imagem">
                 <video autoPlay muted loop>
-                    {props.postSrc.videoSrc.map((src,i) => (
-                        <source src={src.path} type={src.type} key={"video"+i}/>
+                    {props.postSrc.videoSrc.map((src) => (
+                        <source src={src.path} type={src.type} key={src.path}/>
                     ))}
                     Seu navegador não suporta vídeos.
                 </video>

@@ -429,6 +429,32 @@ a {
     bottom: 0px;
 }
 
+.hidden {
+    display: none;
+}
+
+.filled-heart {
+    color: #e80001;
+    animation: bounce 0.5s;
+}
+
+.filled-bookmark{
+    color: #262626;
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @media (max-width:935px){
     .sidebar{
         display: none;

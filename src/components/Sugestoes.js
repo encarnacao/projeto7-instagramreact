@@ -28,7 +28,7 @@ export default function Suggestions() {
                 <p>Sugestões para você</p>
                 <a href="link.html">Ver Tudo</a>
             </div>
-            {suggestions.map(sugg => <Suggestion sugg={sugg} />)}
+            {suggestions.map((sugg,i) => <Suggestion sugg={sugg} key={sugg.name}/>)}
         </div>
     );
 }
