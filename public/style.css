@@ -434,7 +434,7 @@ a {
 }
 
 .filled-heart {
-    color: #e80001;
+    color: red;
     animation: bounce 0.5s;
 }
 
