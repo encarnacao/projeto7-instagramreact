@@ -5,36 +5,39 @@ import PostSrc from "./PostSrc";
 
 //Componentizado por questões de legibilidade.
 export default function PostBody(props) {
-    const [emptyHeart, setEmptyHeart] = React.useState("");
-    const [emptyBookmark, setEmptyBookmark] = React.useState("");
+    const [heart, setHeart] = React.useState(<IoHeartOutline />);
+    const [heartClass, setHeartClass] = React.useState("");
+    const [bookmark, setBookmark] = React.useState(< IoBookmarkOutline />);
+    const [bookmarkClass, setBookmarkClass] = React.useState("");
     const [numberLikes, setNumberLikes] = React.useState(props.info.numberLikes);
-    const [filledHeart, setFilledHeart] = React.useState("hidden");
-    const [filledBookmark, setFilledBookmark] = React.useState("hidden");
     const [imageHeart, setImageHeart] = React.useState("hidden");
 
-    const addLike = () => {
-        setEmptyHeart("hidden");
-        setFilledHeart("filled-heart");
-        setNumberLikes(numberLikes + 1);
+    const toggleLike = () => {
+        if(heartClass === ""){
+            setHeart(<IoHeart />);
+            setHeartClass("filled-heart");
+            setNumberLikes(numberLikes + 1);
+        } else {
+            setHeart(<IoHeartOutline />);
+            setHeartClass("");
+            setNumberLikes(numberLikes - 1);
+        }
     }
-    const removeLike = () => {
-        setEmptyHeart("");
-        setFilledHeart("hidden");
-        setNumberLikes(numberLikes - 1);
-    }
-    const addBookmark = () => {
-        setEmptyBookmark("hidden");
-        setFilledBookmark("filled-bookmark");
-    }
-    const removeBookmark = () => {
-        setEmptyBookmark("");
-        setFilledBookmark("hidden");
+    
+    const toggleBookmark = () => {
+        if (bookmarkClass === "") {
+            setBookmark(<IoBookmark />);
+            setBookmarkClass("filled-bookmark");
+        } else {
+            setBookmark(<IoBookmarkOutline />);
+            setBookmarkClass("");
+        }
     }
 
     const heartGrow = () => {
         setImageHeart("ion-icon");
-        if(filledHeart === "hidden") {
-            addLike();
+        if(heartClass === "") {
+            toggleLike();
         }
         setTimeout(() => {setImageHeart("hidden")}, 800);
     }
@@ -49,13 +52,11 @@ export default function PostBody(props) {
             <div className="baixo">
                 <div className="lcs"> {/*Like, Comment, Share*/}
                     <div className="esquerda">
-                        <span className={emptyHeart} onClick={addLike} data-test="like-post"><IoHeartOutline /></span>
-                        <span className={filledHeart} onClick={removeLike} data-test="like-post"><IoHeart /></span>
+                        <span className={heartClass} onClick={toggleLike} data-test="like-post">{heart}</span>
                         <IoChatbubbleOutline />
                         <IoPaperPlaneOutline />
                     </div>
-                    <span className={emptyBookmark} onClick={addBookmark} data-test="save-post"><IoBookmarkOutline /></span>
-                    <span className={filledBookmark} onClick={removeBookmark} data-test="save-post"><IoBookmark /></span>
+                    <span className={bookmarkClass} onClick={toggleBookmark} data-test="save-post">{bookmark}</span>
                 </div>
 
                 <div className="curtidas">
