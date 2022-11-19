@@ -448,22 +448,28 @@ a {
     cursor: pointer;
 }
 
-.post-image .ion-icon{
+.post-image .heart-box{
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-box .ion-icon{
     color: white;
     font-size: 150px;
-    transform: translate(-50%, -50%);
     animation: heartgrow 0.3s;
 }
 
 @keyframes heartgrow{
     0%{
-        transform: scale(0.2) translate(-50%, -50%);
+        transform: scale(0.2);
     }
     100%{
-        transform: scale(1) translate(-50%, -50%);
+        transform: scale(1);
     }
 }
 

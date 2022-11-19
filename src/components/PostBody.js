@@ -47,7 +47,7 @@ export default function PostBody(props) {
         <>
             <div className = "post-image" onDoubleClick={heartGrow} data-test = "post-image" >
                 <PostSrc postSrc={props.info.postSrc} />
-                <span className={imageHeart}><IoHeart/></span>
+                <div className="heart-box"><span className={imageHeart}><IoHeart/></span></div>
             </div>
             <div className="baixo">
                 <div className="lcs"> {/*Like, Comment, Share*/}
