@@ -15,11 +15,11 @@ export default function User() {
         return newAvatar?setAvatar(newAvatar):null;
     }
     return (
-        <div className="meu-perfil">
-            <a href="#link"><img src={avatar} alt="" onClick={changeAvatar} className="perfil-img" /></a>
+        <div className="meu-perfil" data-test="user">
+            <a href="#link"><img src={avatar} alt="" onClick={changeAvatar} className="perfil-img" data-test="profile-image" /></a>
             <div className="nome">
                 <a href="https://instagram.com/cencarnacaoq"><h1>cencarnacaoq</h1></a>
-                <p>{name}<span style={{cursor:"pointer"}} onClick={changeName}><IoPencil /></span></p>
+                <p><span data-test="name">{name}</span><span style={{cursor:"pointer"}} data-test="edit-name" onClick={changeName}><IoPencil /></span></p>
             </div>
         </div>
     );

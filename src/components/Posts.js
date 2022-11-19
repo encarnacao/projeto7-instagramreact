@@ -1,7 +1,6 @@
 import { IoEllipsisHorizontal } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
-import BottomPost from './BottomPost';
-import PostSrc from "./PostSrc";
+import PostBody from './PostBody';
 
 const posts = [
     {
@@ -52,7 +51,7 @@ const posts = [
 
 function Post(props) {
     return (
-        <div className="post">
+        <div className="post" data-test="post">
             <IconContext.Provider value={{ className: 'ion-icon' }}>
                 <div className="topo">
                     <div className="perfil">
@@ -63,8 +62,7 @@ function Post(props) {
                         <IoEllipsisHorizontal />
                     </div>
                 </div>
-                <PostSrc postSrc={props.post.postSrc} />
-                <BottomPost info={props.post} />
+                <PostBody info={props.post} />
             </IconContext.Provider>
         </div>
     )
